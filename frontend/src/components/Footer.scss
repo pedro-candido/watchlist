@@ -1,0 +1,30 @@
+.footer{
+    font-family: 'Roboto Condensed';
+    background-color: #B22EBD;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    min-height: 60px;
+    
+    .footer-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .donate-footer{
+        padding: 10px;
+        background-color: #fff;
+        color: #B22EBD;
+        border-radius: 5px;
+        word-wrap: break-word;
+        text-decoration: none;
+    }
+
+    .social-icons{
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
