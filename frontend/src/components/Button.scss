@@ -1,0 +1,22 @@
+.btn-default{
+    background-color: #B22EBD;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Roboto Condensed';
+    border-radius: 5px;
+    min-width: 100px;
+    min-height: 40px;
+    max-width: 110px;
+    transition: .2s background-color;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #cf5fd8;
+        transition: .2s background-color;
+    }
+}
