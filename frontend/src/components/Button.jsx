@@ -1,11 +1,10 @@
 import React from 'react';
-import './Button.scss'
 
-const Button = ({label, type}) =>{
+const Button = ({children, type}) =>{
     return(
         <>
             <div className={type}>
-                {label}      
+                {children}      
             </div>
         </>
     )

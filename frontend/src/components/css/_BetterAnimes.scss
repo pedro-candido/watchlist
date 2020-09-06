@@ -1,0 +1,11 @@
+.BetterAnimes_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .anime-name{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.scss'
 
 import fb from '../assets/facebook.png'
 import instagram from '../assets/instagram.png'

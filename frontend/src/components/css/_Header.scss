@@ -1,0 +1,42 @@
+.headerNotLogged{
+    background-color: rgb(194, 0, 184);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    &>div{
+        font-family: $roboto;
+        display: flex;
+        justify-content: center;
+        width: 97%;
+        align-items: center;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    img{
+        width: 70px;
+    }
+}
+
+.header{
+    background-color: rgb(194, 0, 184);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+
+    &>div{
+        font-family: $roboto;
+        display: flex;
+        justify-content: space-between;
+        width: 97%;
+        align-items: center;
+        color: #ffffff;
+        font-weight: bold;
+    }
+    img{
+        width: 70px;
+    }
+}

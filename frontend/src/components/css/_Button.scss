@@ -1,5 +1,5 @@
 .btn-default{
-    background-color: #B22EBD;
+    background-color: $base-color;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -14,9 +14,17 @@
     max-width: 110px;
     transition: .2s background-color;
     cursor: pointer;
-
     &:hover{
-        background-color: #cf5fd8;
+        background-color: $base-hover-color;
         transition: .2s background-color;
+    }
+}
+
+.btn-secondary{
+    background-color: #fff;
+    color: $base-color;
+    &:hover{
+        background-color: $base-hover-color;
+        color: #fff;
     }
 }

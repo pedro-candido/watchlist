@@ -1,0 +1,22 @@
+.anime-card{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90px;
+    margin: 0 2% 0 2%;
+
+    .anime-img{
+        width: 90px;
+        height: 140px;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .anime-name{
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+    }
+}

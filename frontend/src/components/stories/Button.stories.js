@@ -7,4 +7,11 @@ export default {
     component: Button,
 }
 
-export const Primary = () => <Button type="btn-default" label="Teste"/>
+export const Primary = () => <Button type="btn-default">Primary</Button>
+
+export const Secondary = () => <Button type="btn-secondary">Secondary</Button>
+
+export const All_Buttons = () => <div className='d-flex'>
+    <Button type="btn-default">Primary</Button>
+    <Button type="btn-secondary">Secondary</Button>
+</div>
