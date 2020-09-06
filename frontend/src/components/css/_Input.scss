@@ -1,0 +1,19 @@
+label{
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+}
+
+input{
+    padding: 10px;
+    background-color: #e2e2e2;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    &::placeholder{
+        color: #5a5a5a;
+        font-weight: bold;
+        font-family: 'Roboto Condensed';
+    }
+}
+

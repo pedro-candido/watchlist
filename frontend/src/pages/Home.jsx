@@ -17,12 +17,12 @@ const Home = () =>{
             <Title>Sua lista de animes personalizada!</Title>
             <div className="hero">
                 <img src={Resting} alt="Pessoa assistindo TV"/>
-                <div>
-                    <Button>Registrar</Button>
-                    <Button>Entrar</Button>
+                <div className="home-buttons">
+                    <Button type="btn-default">Registrar</Button>
+                    <Button type="btn-default">Entrar</Button>
                 </div>
             </div>
-            <div>
+            <div className="best-animes">
                 <Title>Animes mais votados</Title>
                 <BetterAnimes />
             </div>

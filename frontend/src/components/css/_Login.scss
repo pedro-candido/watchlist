@@ -1,0 +1,19 @@
+.loginBox{
+    background-color: #e2e2e2;
+    padding: 20px;
+    border-radius: 5px;
+    
+    input{
+        background-color: #fff;
+        width: 100%;
+    }
+    .inputFields{
+        justify-content: center;
+        align-items: center;
+    }
+    .forgotPasswd{
+        color: $base-color;
+        font-family: 'Roboto Condensed';
+        font-weight: bold;
+    }
+}

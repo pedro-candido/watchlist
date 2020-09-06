@@ -49,10 +49,40 @@ table {
     border-spacing: 0;
 }
 
+.hero{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5% 0 5% 0;
+
+    img{
+        width: 50vw;
+    }
+
+    .home-buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        min-height: 300px;
+    }
+
+}
+
+.best-animes{
+    margin-bottom: 10%;
+}
+
 @import 'Header';
 @import 'Footer';
 
-@import 'Button';
+
+@import 'Register';
+@import 'Login';
+
+
 @import 'AnimeCard';
-@import 'Title';
 @import 'BetterAnimes';
+@import 'Button';
+@import 'Input';
+@import 'Title';

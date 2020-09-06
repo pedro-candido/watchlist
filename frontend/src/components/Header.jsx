@@ -7,7 +7,7 @@ const Header = ({ username }) => {
             <div>
                 <img src={logo} />
                 {username 
-                ? <p>{username}</p> 
+                ? <p className="mb-0">{username}</p> 
                 : null}
 
             </div>
