@@ -6,6 +6,7 @@
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
+        "axios": "^0.20.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-scripts": "3.4.3"
@@ -17,7 +18,7 @@
         "eject": "react-scripts eject",
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public",
-        "scss":"node-sass --watch scss -o css"
+        "scss": "node-sass --watch scss -o css"
     },
     "eslintConfig": {
         "extends": "react-app"

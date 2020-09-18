@@ -1,31 +1,8 @@
 const express = require('express')
-
 const app = express()
+import router from './routes'
 
-app.get('/users', (req,res) =>{
-    let teste = req.params
-    teste = "save"
+app.use(express.json())
+app.use(router)
 
-    console.log(req)
-    return res.send({"message": teste})
-})
-
-app.post('/users', (req,res) =>{
-
-})
-
-app.put('/users/:id', (req,res)=>{
-
-})
-
-
-
-app.get('/animes', (req,res)=>{
-    
-})
-
-app.post('/animes', (req,res)=>{
-
-})
-
-app.listen(3333)
+export default app
