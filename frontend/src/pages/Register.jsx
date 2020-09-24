@@ -1,4 +1,5 @@
 import React, { useState, setState } from 'react'
+import axios from 'axios'
 
 import Input from '../components/Input'
 import Button from '../components/Button'
@@ -9,6 +10,8 @@ import Footer from '../components/Footer'
 
 const Register = () => {
     const [name, setName] = useState("")
+    const [fullName, setFullName] = useState("")
+    const [email, setEmail] = useState("")
     const [dateNasc, setDateNasc] = useState("")
     const [sex, setSex] = useState("")
     const [interest, setInterest] = useState("")
@@ -18,6 +21,7 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        axios.post('http://localhost:3333/users', { name, email, fullName, dateNasc, sex, interest, username, password, confirmPassword })
         alert(`${name}, ${dateNasc}, ${sex}, ${interest}, ${username}, ${password}, ${confirmPassword}`)
     }
 
@@ -26,13 +30,24 @@ const Register = () => {
             <Header />
             <div className="mt-5 d-flex justify-align-center flex-column">
                 <form onSubmit={handleSubmit}>
-
                     <Input
                         value={name}
                         onChange={e => setName(e.target.value)}
                         inputType="text"
                         inputName="name"
-                        inputPlaceholder="Ex.:Pedro Candido">Nome</Input>
+                        inputPlaceholder="Ex.:Pedro">Nome</Input>
+                    <Input
+                        value={fullName}
+                        onChange={e => setFullName(e.target.value)}
+                        inputType="text"
+                        inputName="name"
+                        inputPlaceholder="Ex.:Candido">Sobrenome</Input>
+                    <Input
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        inputType="text"
+                        inputName="name"
+                        inputPlaceholder="Ex.:pedroferreirac@hotmail.com">E-mail</Input>
                     <Input
                         value={dateNasc}
                         onChange={e => setDateNasc(e.target.value)}

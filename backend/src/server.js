@@ -1,5 +1,6 @@
 import app from './app.js'
 
 // Configs
-
-app.listen(3333)
+const port = 3333
+console.log(`listenin on ${port}`)
+app.listen(port)
