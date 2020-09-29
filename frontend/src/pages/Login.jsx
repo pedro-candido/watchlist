@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
-// TODO Verificar funcionamento jwt no node
+// 
+import axios from 'axios'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 
 import Title from '../components/Title'
 import Input from '../components/Input'
@@ -7,15 +11,36 @@ import Button from '../components/Button'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+const MySwal = withReactContent(Swal)
+
 const Login = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSubmit = (e) =>{
-        console.log(e)
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        alert(`Olá ${username} sua senha é ${password}`)
+        if (username === '' || password === '') {
+            MySwal.fire({
+                title: <p>Digite nome de usuário e senha</p>,
+                icon: 'error'
+            })
+        }
+        else {
+            try {
+                const res = await axios.post(`http://localhost:3333/token`, { username, password })
+                MySwal.fire({
+                    title: <p>Entrando ...</p>,
+                    icon: 'success'
+                })
+            }
+            catch (err) {
+                MySwal.fire({
+                    title: <p>Usuário não encontrado</p>,
+                    icon: 'error'
+                })
+            }
+        }
     }
 
     return (
