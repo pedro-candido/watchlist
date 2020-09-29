@@ -13,7 +13,6 @@ export default {
         return res.json(users)
     },
     get(req, res) {
-
     },
     async create(req, res) {
         const { password } = req.body

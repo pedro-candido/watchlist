@@ -2,6 +2,7 @@ const express = require('express')
 
 // Controllers
 import User from './controllers/users'
+import Auth from './controllers/auth'
 
 
 const { Router } = express
@@ -46,6 +47,8 @@ const animes = [
         rate:5
     },
 ] 
+
+router.post('/token', Auth.getToken )
 
 router.get('/users', User.list)
 
