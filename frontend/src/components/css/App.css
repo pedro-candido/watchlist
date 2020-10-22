@@ -41,6 +41,17 @@ table {
   border-spacing: 0;
 }
 
+a.btn-default {
+  text-decoration: none;
+  border: 2px solid #B22EBD;
+  padding: 20px;
+}
+
+a.btn-default:hover {
+  background-color: #b548be;
+  color: #fff;
+}
+
 .hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,7 +66,7 @@ table {
 }
 
 .hero img {
-  width: 50vw;
+  width: 45vw;
 }
 
 .hero .home-buttons {
@@ -304,6 +315,7 @@ table {
   -webkit-transition: .2s background-color;
   transition: .2s background-color;
   cursor: pointer;
+  border: 1px solid transparent;
 }
 
 .btn-default:hover {

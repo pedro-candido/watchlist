@@ -49,6 +49,17 @@ table {
     border-spacing: 0;
 }
 
+a.btn-default{
+  text-decoration: none;
+  border: 2px solid $base-color;
+  padding: 20px;
+
+  &:hover{
+    background-color: $base-hover-color;
+    color: #fff
+  }
+}
+
 .hero{
     display: flex;
     justify-content: space-evenly;

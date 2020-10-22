@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-// 
+import { useHistory } from 'react-router-dom'
+
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -8,8 +9,6 @@ import withReactContent from 'sweetalert2-react-content'
 import Title from '../components/Title'
 import Input from '../components/Input'
 import Button from '../components/Button'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 
 const MySwal = withReactContent(Swal)
 
@@ -17,6 +16,8 @@ const Login = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+
+    const history = useHistory()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -29,10 +30,9 @@ const Login = () => {
         else {
             try {
                 const res = await axios.post(`http://localhost:3333/token`, { username, password })
-                MySwal.fire({
-                    title: <p>Entrando ...</p>,
-                    icon: 'success'
-                })
+                localStorage.setItem("token", res.data.token)
+                history.push('/')
+
             }
             catch (err) {
                 MySwal.fire({
@@ -45,7 +45,6 @@ const Login = () => {
 
     return (
         <div>
-            <Header />
             <Title>Bem vindo ao WatchList</Title>
             <div className="d-flex justify-content-center">
                 <div className="loginBox d-flex justify-content-center align-items-center flex-column w-30 mb-3">
@@ -68,16 +67,15 @@ const Login = () => {
                     >
                         Senha
                     </Input>
-                    <a className="forgotPasswd" href="">
+                    <a className="forgotPasswd mt-2 mb-4" href="">
                         Esqueceu sua senha ?
-                </a>
+                    </a>
                     <Button onClick={handleSubmit} type="btn-default">Acessar</Button>
                 </div>
             </div>
             <div className="d-flex justify-content-center mb-5 pb-5">
                 <Button type="btn-default">Não tenho uma conta</Button>
             </div>
-            <Footer />
         </div>
     )
 }

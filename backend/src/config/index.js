@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize'
 import database from './database'
 
 const sequelize = new Sequelize(
-   database
+    database
 )
 
 export default sequelize

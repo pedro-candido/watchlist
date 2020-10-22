@@ -10,6 +10,8 @@
         "jsonwebtoken": "^8.5.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-input-number": "^5.0.19",
+        "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.3",
         "sweetalert2": "^10.3.5",
         "sweetalert2-react-content": "^3.2.0"

@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Input = ({inputName, inputType, inputPlaceholder, value, onChange, children}) =>{
+const Input = ({ inputName, inputType, inputPlaceholder, value, onChange, children }) => {
     return (
-        <div className='inputFields d-flex flex-column container'>
+        <div className='inputFields d-flex flex-column container mb-3'>
             <label htmlFor={inputName}>{children}</label>
-            <input 
+            <input
                 value={value}
                 onChange={onChange}
-                type={inputType} 
-                name={inputName} 
+                type={inputType}
+                name={inputName}
                 placeholder={inputPlaceholder}
             />
         </div>

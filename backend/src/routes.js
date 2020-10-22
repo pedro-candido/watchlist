@@ -9,46 +9,6 @@ import Auth from './controllers/auth'
 const { Router } = express
 const router = Router()
 
-
-const animes = [
-   {
-      title: "Shingeki no Kyojin",
-      episodes: "60",
-      comment: "A very good anime",
-      genre: "shounen",
-      tags: [
-         "shounen",
-         "harem",
-         "titans"
-      ],
-      rate: 5
-   },
-   {
-      title: "Shingeki no Kyojin2",
-      episodes: "60",
-      comment: "A very good anime",
-      genre: "shounen",
-      tags: [
-         "shounen",
-         "harem",
-         "titans"
-      ],
-      rate: 5
-   },
-   {
-      title: "Shingeki no Kyojin3",
-      episodes: "60",
-      comment: "A very good anime",
-      genre: "shounen",
-      tags: [
-         "shounen",
-         "harem",
-         "titans"
-      ],
-      rate: 5
-   },
-]
-
 router.post('/token', Auth.getToken)
 
 router.get('/users', User.list)

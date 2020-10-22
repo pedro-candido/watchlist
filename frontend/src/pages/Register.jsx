@@ -1,12 +1,17 @@
 import React, { useState, setState } from 'react'
 import axios from 'axios'
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 import Input from '../components/Input'
 import Button from '../components/Button'
 import SubmitButton from '../components/SubmitButton'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+
+const MySwal = withReactContent(Swal)
 
 const Register = () => {
     const [name, setName] = useState("")
@@ -18,16 +23,50 @@ const Register = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+    const pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i)
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if (
+            !name ||
+            !fullName ||
+            !email ||
+            !dateNasc ||
+            !sex ||
+            !interest ||
+            !username ||
+            !password ||
+            !confirmPassword
+        )
+            return MySwal.fire({
+                title: <p>Preencha todos os campos</p>,
+                icon: 'error'
+            })
+
+        if (!email.match(pattern)) {
+            return MySwal.fire({
+                title: <p>Digite o e-mail corretamente</p>,
+                icon: 'error'
+            })
+        }
+
+        if (password !== confirmPassword)
+            return MySwal.fire({
+                title: <p>As senhas digitadas estão diferentes</p>,
+                icon: 'error'
+            })
+
         axios.post('http://localhost:3333/users', { name, email, fullName, dateNasc, sex, interest, username, password, confirmPassword })
-        alert(`${name}, ${dateNasc}, ${sex}, ${interest}, ${username}, ${password}, ${confirmPassword}`)
+        MySwal.fire({
+            title: <p>Boa, usuário criado!</p>,
+            icon: 'success'
+        })
     }
+
 
     return (
         <div>
-            <Header />
             <div className="mt-5 d-flex justify-align-center flex-column">
                 <form onSubmit={handleSubmit}>
                     <Input
@@ -90,13 +129,13 @@ const Register = () => {
 
                     <div className="d-flex justify-content-center">
                         <div className="registerButtons d-flex justify-content-between mb-5 p-5">
-                            <Button type="btn-default">Já tenho uma conta</Button>
+                            <Button
+                                type="btn-default">Já tenho uma conta</Button>
                             <SubmitButton />
                         </div>
                     </div>
                 </form>
             </div>
-            <Footer />
         </div>
     )
 }
